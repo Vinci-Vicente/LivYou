@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Marketing | Liv You</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5e2776',
+                        accent: '#6c9f94',
+                        light: '#f3f4f6',
+                        dark: '#1f2937',
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-light">
+
+    <header class="bg-primary text-white text-center py-12 shadow-lg">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-3">Plano de Alavancagem</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-4">Instagram | Liv You Imóveis</h2>
+            <p class="text-xl opacity-90 italic">"A imobiliária que investe em você"</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="analise" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-primary mb-6">Análise Atual: Nosso Ponto de Partida</h2>
+            <p class="text-center text-lg text-dark max-w-3xl mx-auto mb-8">
+                Iniciamos o trabalho de tráfego pago nesta semana e já temos dados valiosos. Nossos números de 06/Out a 07/Nov mostram a base que construiremos.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <span class="text-6xl font-black text-primary">1.954</span>
+                    <p class="text-xl font-semibold text-dark mt-2">Seguidores Atuais</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <span class="text-6xl font-black text-accent">46,8 mil</span>
+                    <p class="text-xl font-semibold text-dark mt-2">Visualizações (30d)</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <span class="text-6xl font-black text-primary">28</span>
+                    <p class="text-xl font-semibold text-dark mt-2">Novos Seguidores (30d)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="diagnostico" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-primary mb-6">Diagnóstico Estratégico</h2>
+            <p class="text-center text-lg text-dark max-w-3xl mx-auto mb-8">
+                Os dados iniciais revelam nossas maiores oportunidades. O tráfego pago funciona, mas nosso conteúdo precisa evoluir para refletir nosso diferencial: o investimento.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between">
+                    <h3 class="text-xl font-bold text-dark text-center mb-4">Origem dos Novos Seguidores (30d)</h3>
+                    <div class="chart-container relative w-full max-w-lg mx-auto h-72 md:h-80 max-h-96">
+                        <canvas id="growthSourceChart"></canvas>
+                    </div>
+                    <p class="text-dark text-center mt-4">
+                        O tráfego pago, mesmo recém-iniciado, já representa <strong>54%</strong> do nosso crescimento. Isso valida o investimento e mostra um enorme potencial de escala.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between">
+                    <h3 class="text-xl font-bold text-dark text-center mb-4">Formatos de Post (Feed 30d)</h3>
+                    <div class="chart-container relative w-full max-w-lg mx-auto h-72 md:h-80 max-h-96">
+                        <canvas id="contentFormatChart"></canvas>
+                    </div>
+                    <p class="text-dark text-center mt-4">
+                        Nossa distribuição de formatos é variada, com foco em posts simples (14). A performance indica que Carrosséis (6) e Reels (2) geram mais engajamento.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between">
+                    <h3 class="text-xl font-bold text-dark text-center mb-4">Tópicos de Conteúdo (Atual)</h3>
+                    <div class="chart-container relative w-full max-w-lg mx-auto h-72 md:h-80 max-h-96">
+                        <canvas id="contentTopicChart"></canvas>
+                    </div>
+                    <p class="text-dark text-center mt-4">
+                        <strong>Diagnóstico Chave:</strong> 100% dos nossos posts são sobre imóveis. Não estamos comunicando nosso maior diferencial: a assessoria de investimento e facilitação de compra.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="personas" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-primary mb-6">Público-Alvo: Nossas Personas</h2>
+            <p class="text-center text-lg text-dark max-w-3xl mx-auto mb-8">
+                Para quem falamos? Direcionar o conteúdo para estas personas aumentará nossa conexão e conversão. Cobrimos desde o primeiro imóvel até o investimento sólido.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="bg-white rounded-xl shadow-md p-8 border-l-8 border-accent">
+                    <h3 class="text-2xl font-bold text-accent mb-4">Persona A: O Conquistador</h3>
+                    <ul class="list-none space-y-3 text-dark">
+                        <li><strong>Perfil:</strong> 25-35 anos, solteiro ou casal jovem.</li>
+                        <li><strong>Meta:</strong> Sair do aluguel, comprar a primeira casa própria (MCMV).</li>
+                        <li><strong>Dores:</strong> Medo da burocracia, dificuldade com o valor da entrada.</li>
+                        <li><strong>Nossa Solução:</strong> Assessoria completa na Caixa, redução da entrada, parcelamento de documentos em 12x.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-8 border-l-8 border-primary">
+                    <h3 class="text-2xl font-bold text-primary mb-4">Persona B: O Investidor</h3>
+                    <ul class="list-none space-y-3 text-dark">
+                        <li><strong>Perfil:</strong> 40-55 anos, busca segurança e renda passiva.</li>
+                        <li><strong>Meta:</strong> Diversificar patrimônio, comprar imóvel como investimento.</li>
+                        <li><strong>Dores:</strong> Encontrar boas oportunidades, garantir transação segura.</li>
+                        <li><strong>Nossa Solução:</strong> Curadoria de imóveis com potencial de valorização, análise de mercado, assessoria jurídica e operacional.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="conteudo" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-primary mb-6">A Nova Estratégia de Conteúdo</h2>
+            <p class="text-center text-lg text-dark max-w-3xl mx-auto mb-8">
+                Vamos além de "vende-se". Vamos educar, inspirar e provar que somos <span class="font-bold text-primary">"a imobiliária que investe em você"</span>. Propomos 3 pilares de conteúdo:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="bg-primary text-white rounded-xl shadow-lg p-8 transform transition hover:scale-105 duration-300">
+                    <span class="text-5xl mb-4 block">💡</span>
+                    <h3 class="text-2xl font-bold mb-3">Pilar 1: Educação (A Ponte)</h3>
+                    <p>Como funciona o financiamento? Como usar o FGTS? Vantagens do MCMV. Dicas para juntar a entrada.
+                    <br><br><strong>Objetivo:</strong> Quebrar objeções e provar que facilitamos a compra.</p>
+                </div>
+
+                <div class="bg-accent text-white rounded-xl shadow-lg p-8 transform transition hover:scale-105 duration-300">
+                    <span class="text-5xl mb-4 block">📈</span>
+                    <h3 class="text-2xl font-bold mb-3">Pilar 2: Investimento (O Slogan)</h3>
+                    <p>Por que Tubarão/Amurel? Potencial de valorização. Imóvel é investimento. Comparativo: aluguel vs. parcela.
+                    <br><br><strong>Objetivo:</strong> Reforçar nosso slogan e atrair a Persona B.</p>
+                </div>
+
+                <div class="bg-white text-dark rounded-xl shadow-lg p-8 transform transition hover:scale-105 duration-300">
+                    <span class="text-5xl mb-4 block">🏠</span>
+                    <h3 class="text-2xl font-bold mb-3">Pilar 3: Oportunidade (A Venda)</h3>
+                    <p>Nossos imóveis, mas com uma nova abordagem. Foco nos benefícios: "Entrada facilitada", "Parcela menor que aluguel".
+                    <br><br><strong>Objetivo:</strong> Converter o lead aquecido pelos Pilares 1 e 2.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="crescimento" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-primary mb-6">Funil de Crescimento: Unindo Conteúdo e Tráfego</h2>
+            <p class="text-center text-lg text-dark max-w-3xl mx-auto mb-8">
+                Não vamos apenas postar. Vamos usar o tráfego pago para impulsionar o conteúdo certo para a persona certa, criando um funil de vendas dentro do Instagram.
+            </p>
+            
+            <div class="bg-white rounded-xl shadow-md p-8 max-w-3xl mx-auto">
+                <h3 class="text-2xl font-bold text-dark text-center mb-6">Jornada do Cliente</h3>
+                <div class="flex flex-col items-center space-y-4">
+                    
+                    <div class="bg-primary text-white p-6 rounded-lg shadow-md w-full md:w-3/4 text-center">
+                        <p class="text-sm font-semibold uppercase">Topo do Funil</p>
+                        <p class="text-xl font-bold">DESCOBERTA</p>
+                        <p>Anúncios pagos (Pilar 1 e 2) direcionados para as Personas A e B na região da Amurel.</p>
+                    </div>
+                    
+                    <div class="text-5xl font-black text-accent">&darr;</div>
+                    
+                    <div class="bg-accent text-white p-6 rounded-lg shadow-md w-full md:w-3/4 text-center">
+                        <p class="text-sm font-semibold uppercase">Meio do Funil</p>
+                        <p class="text-xl font-bold">ENGAJAMENTO</p>
+                        <p>Público atraído consome nosso conteúdo educacional, reconhece nossa autoridade e começa a seguir.</p>
+                    </div>
+                    
+                    <div class="text-5xl font-black text-accent">&darr;</div>
+                    
+                    <div class="bg-dark text-white p-6 rounded-lg shadow-md w-full md:w-3/4 text-center">
+                        <p class="text-sm font-semibold uppercase">Fundo do Funil</p>
+                        <p class="text-xl font-bold">CONVERSÃO</p>
+                        <p>Lead aquecido vê os posts de Oportunidade (Pilar 3) e clica no link para assessoria via WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="metas" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-primary mb-6">Metas e Próximos Passos</h2>
+            <p class="text-center text-lg text-dark max-w-3xl mx-auto mb-8">
+                Um plano precisa de metas claras. Com base no diagnóstico, sugerimos objetivos realistas e o cronograma para alcançá-los.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <h3 class="text-2xl font-bold text-dark mb-4">Metas (Próximos 90 dias)</h3>
+                    <ul class="list-disc list-inside space-y-3 text-lg text-dark">
+                        <li><span class="font-bold">Seguidores:</span> Atingir <strong class="text-primary">3.000 seguidores</strong> qualificados.</li>
+                        <li><span class="font-bold">Leads:</span> Gerar <strong class="text-primary">50 leads/mês</strong> via link do Instagram.</li>
+                        <li><span class="font-bold">Conteúdo:</span> Implementar o calendário de 3 posts/semana (1 de cada pilar).</li>
+                        <li><span class="font-bold">Investimento:</span> Otimizar o tráfego pago com foco na Persona A e B.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <h3 class="text-2xl font-bold text-dark mb-4">Cronograma de Publicação</h3>
+                    <p class="text-lg text-dark mb-4">Os dados mostram maior engajamento à noite. Vamos focar em:</p>
+                    <ul class="list-none space-y-3 text-lg text-dark">
+                        <li><span class="font-bold text-accent py-1 px-3 bg-accent/10 rounded-full">Segunda-feira:</span> 18h às 21h (Pilar 1)</li>
+                        <li><span class="font-bold text-accent py-1 px-3 bg-accent/10 rounded-full">Terça-feira:</span> 18h às 21h (Pilar 2)</li>
+                        <li><span class="font-bold text-accent py-1 px-3 bg-accent/10 rounded-full">Sexta-feira:</span> 18h às 21h (Pilar 3)</li>
+                    </ul>
+                    <p class="text-md text-dark mt-4">Stories diários com bastidores, enquetes e reforço dos pilares.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-6 mt-12">
+        <p>&copy; 2025 Liv You Imóveis. A imobiliária que investe em você.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const chartColors = {
+                primary: tailwind.config.theme.extend.colors.primary,
+                accent: tailwind.config.theme.extend.colors.accent,
+                gray: '#9ca3af',
+                lightGray: '#e5e7eb'
+            };
+
+            const defaultTooltipCallback = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            const growthSourceCtx = document.getElementById('growthSourceChart').getContext('2d');
+            new Chart(growthSourceCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Tráfego Pago', 'Orgânico'],
+                    datasets: [{
+                        data: [15, 13],
+                        backgroundColor: [chartColors.accent, chartColors.primary],
+                        borderColor: '#ffffff',
+                        borderWidth: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: defaultTooltipCallback.plugins
+                }
+            });
+
+            const contentFormatCtx = document.getElementById('contentFormatChart').getContext('2d');
+            new Chart(contentFormatCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Post Simples', 'Carrossel', 'Reels'],
+                    datasets: [{
+                        data: [14, 6, 2],
+                        backgroundColor: [chartColors.primary, chartColors.accent, chartColors.gray],
+                        borderColor: '#ffffff',
+                        borderWidth: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: defaultTooltipCallback.plugins
+                }
+            });
+
+            const contentTopicCtx = document.getElementById('contentTopicChart').getContext('2d');
+            new Chart(contentTopicCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Apenas Vitrine de Imóveis', ['Oportunidade:', 'Educacional/Investimento']],
+                    datasets: [{
+                        data: [100, 0.1],
+                        backgroundColor: [chartColors.primary, chartColors.lightGray],
+                        borderColor: '#ffffff',
+                        borderWidth: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: defaultTooltipCallback.plugins
+                }
+            });
+        });
+    </script>
+</body>
+</html>
